@@ -35,3 +35,18 @@ Set colemak and apl with "menu_toggle" as switch.
 -------------------------------------------------
 
   setxkbmap -layout "us,apl" -variant "colemak,basic" -option grp:menu_toggle
+
+Using compositor.
+-----------------
+
+  * install compton
+  * add to i3-conf:
+      exec --no-startup-id compton -CGb --backend glx --vsync opengl
+
+Setting wallpapers:
+-------------------
+
+  * install nitrogen
+  * use gui for setup.
+  * add to i3-conf:
+      exec --no-startup-id nitrogen --restore
