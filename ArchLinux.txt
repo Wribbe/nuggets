@@ -1,0 +1,37 @@
+Force arch to shut down properly to enable selecting boot device on resume.
+---------------------------------------------------------------------------
+
+  Put the following in /etc/systemd/sleep.conf:
+
+  [Sleep]
+  HibernateMode=shutdown
+
+  Trigger hibernation with 'sudo systemd-sleep hibernate'
+
+Possible to hibernate without sudo and using and the command 'hib'.
+-------------------------------------------------------------------
+
+  Edit sudo-properties with 'sudo visudo'.
+
+  find the section ## User privilege specification and add:
+
+    <username> ALL=(ALL) NOPASSWD: /usr/bin/systemctl hibernate
+
+  go to ~/.<shell>rc and add:
+
+    alias hib='sudo systemctl hibernate'
+
+Show latest bootup messages.
+----------------------------
+
+  sudo journalctl -b
+
+Show list of bootups.
+---------------------
+
+  sudo journalctl --list-boots
+
+Set colemak and apl with "menu_toggle" as switch.
+-------------------------------------------------
+
+  setxkbmap -layout us,apl -variant colemak,basic -option grp:menu_toggle
