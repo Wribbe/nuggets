@@ -50,3 +50,9 @@ Setting wallpapers:
   * use gui for setup.
   * add to i3-conf:
       exec --no-startup-id nitrogen --restore
+
+Setting wallpaper for i3lock:
+-----------------------------
+
+  * add to sh-script that overrides i3lock
+      /bin/i3lock --image=<path_to_img>.png -t
