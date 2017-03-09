@@ -56,3 +56,10 @@ Setting wallpaper for i3lock:
 
   * add to sh-script that overrides i3lock
       /bin/i3lock --image=<path_to_img>.png -t
+
+Toggle between colomak/apl & se with F11/F12:
+---------------------------------------------
+
+  * add to i3config:
+    bindsym F11 exec "setxkbmap -layout 'se'"
+    bindsym F12 exec "setxkbmap -layout 'us,apl' -variant 'colemak,basic' -option grp:menu_toggle"
