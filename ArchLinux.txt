@@ -34,4 +34,4 @@ Show list of bootups.
 Set colemak and apl with "menu_toggle" as switch.
 -------------------------------------------------
 
-  setxkbmap -layout us,apl -variant colemak,basic -option grp:menu_toggle
+  setxkbmap -layout "us,apl" -variant "colemak,basic" -option grp:menu_toggle
