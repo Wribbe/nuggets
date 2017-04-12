@@ -63,3 +63,16 @@ Toggle between colomak/apl & se with F11/F12:
   * add to i3config:
     bindsym F11 exec "setxkbmap -layout 'se'"
     bindsym F12 exec "setxkbmap -layout 'us,apl' -variant 'colemak,basic' -option grp:menu_toggle"
+
+Getting HL2130 printer to have the correct driver:
+--------------------------------------------------
+
+  * Install cups.
+  * Install foomatic and foomatic-db.
+  * Install hplip
+  * Add current user to lp and sys groups:
+      sudo gpasswd lp -a <user>
+      sudo gpasswd sys -a <user>
+  * Log in @ localhost:631 and add printer.
+  * Use driver for HL2140.
+
