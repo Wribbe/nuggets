@@ -76,3 +76,10 @@ Getting HL2130 printer to have the correct driver:
   * Log in @ localhost:631 and add printer.
   * Use driver for HL2140.
 
+Set default printer with lpr:
+-----------------------------
+
+  * List available printers and copy name.
+    lpstat -p -d
+  * Set printer as default (non-sudo).
+    lpoptions -d <printer name>
