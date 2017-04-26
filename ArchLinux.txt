@@ -83,3 +83,11 @@ Set default printer with lpr:
     lpstat -p -d
   * Set printer as default (non-sudo).
     lpoptions -d <printer name>
+
+'Installing' a dtx package with pdflatex:
+-----------------------------------------
+
+  * Run pdflatex on the *.ins file.
+    pdflatex <package>.ins
+  * Copy the generated *.sty file to the proper dir.
+    mv <package>.sty <latex dir>
