@@ -1,0 +1,54 @@
+set -o vi
+
+preexec() { print -Pn '\e]0;$1 | %~\a' }
+
+alias cdr='cd "$(realpath .)"'
+
+pdfwc() {
+	pdftotext $1 - | wc -w
+}
+
+toread() {
+	words=$(pdfwc $1)
+	printf "words: %d --> " $words
+	wpm=600
+	[ -z "$2" ] || wpm="$2"
+	printf "%s " $(python -c "print(\"{:.2f}h\".format(($words/$wpm)/60.0))")
+	printf "@ $wpm words/minute.\n"
+}
+
+alias xclip='xclip  -selection primary -f | xclip -selection secondary -f | xclip -selection  clipboard'
+unset LESSCHARSET
+
+alias grep='grep --color=always'
+alias less='less -R'
+
+function grf () {
+  file="$1"
+  regex="$2"
+  shift;
+  shift;
+
+  for word in $*; do
+    regex+="|$word"+
+  done
+
+  grep -r -n -C 4 -E "$regex" "$file"
+}
+
+setxkbmap us -variant colemak
+setxkbmap -option caps:escape
+
+alias n='fasd_cd -d'
+alias v='f -e vim'
+
+alias gs='git status'
+alias gc='git commit'
+alias gph='git push origin HEAD'
+alias gp='git add -p'
+alias gpr='git push origin HEAD:refs/for/master'
+alias gss='git diff --staged'
+alias gca='git commit --amend'
+
+eval `dircolors ~/GIT/dircolors-solarized/dircolors.ansi-dark`
+alias ls='ls --color=auto'
