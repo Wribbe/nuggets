@@ -1,14 +1,19 @@
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+call plug#end()
+
 set number
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme solarized
 set clipboard=unnamed
 set ts=2
 set shiftwidth=0
 set softtabstop=0
 set hlsearch
 nnoremap * *#
+
+colorscheme gruvbox
 
 set clipboard^=unnamed,unnamedplus
 
