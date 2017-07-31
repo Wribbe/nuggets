@@ -50,3 +50,6 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
+
+hi clear SpellBad
+hi SpellBad cterm=undercurl ctermfg=red
