@@ -3,3 +3,9 @@
 
 # Add ~1cm border to all pages:
   pdfcrop --margin '19 19 19 19' multi.pdf padded.pdf
+
+# Set lpr default printer:
+  lpoptions -d Brother_HL_2130_series_WingServer
+
+# Print 1'st page of pdf fitted to size in HQ:
+  lpr -o page-ranges=1 multi.pdf -o Resolution=1200x600dpi -o fit-to-page
