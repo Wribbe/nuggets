@@ -1,0 +1,5 @@
+# Make 4x4 of lecture pdfs:
+  pdfjam --nup 4x4 --landscape *.pdf -o ../4x4.pdf
+
+# Add ~1cm border to all pages:
+  pdfcrop --margin '19 19 19 19' multi.pdf padded.pdf
