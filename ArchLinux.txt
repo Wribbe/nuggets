@@ -1,3 +1,14 @@
+Readline-applications should use vi-keys.
+-----------------------------------------
+
+  gdb uses readline. So you just need to put the following command into
+  ~/.inputrc to turn the editing mode to vi.
+
+    set editing-mode vi
+
+  Note: all programs that use readline will be affected by this setting this
+  includes bash.
+
 Force arch to shut down properly to enable selecting boot device on resume.
 ---------------------------------------------------------------------------
 
